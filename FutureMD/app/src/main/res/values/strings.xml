@@ -4,4 +4,6 @@
         <item>MALE</item>
         <item>FEMALE</item>
     </string-array>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="action_settings">Settings</string>
 </resources>

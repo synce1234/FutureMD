@@ -1,24 +1,29 @@
 package com.dev.app.futuremd;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
+import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.squareup.otto.Bus;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import butterknife.Unbinder;
 
 /**
  * Created by Admin on 9/16/2017.
  */
-
-public class SignUpActivity extends AppCompatActivity {
-
+//tinh.tran
+public class SignUpFragment extends BaseFragment {
+    public static final String TAG = "com.dev.app.futuremd.SignUpFragment";
     @BindView(R.id.et_sign_up_first_name)
     EditText etSignUpFirstName;
     @BindView(R.id.et_sign_up_last_name)
@@ -35,17 +40,27 @@ public class SignUpActivity extends AppCompatActivity {
     Button btSignUpCreate;
     @BindView(R.id.tv_sign_up_sign_in)
     TextView tvSignUpSignIn;
+    Unbinder unbinder;
+
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_sign_up, null, true);
+        unbinder = ButterKnife.bind(this, view);
+        return view;
+    }
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sign_up);
-        ButterKnife.bind(this);
+    public void onDestroyView() {
+        super.onDestroyView();
+        unbinder.unbind();
     }
 
     @OnClick(R.id.tv_sign_up_sign_in)
     public void onViewClicked() {
-        Intent intent = new Intent(SignUpActivity.this, LoginActivity.class);
-        startActivity(intent);
+        LoginActivity.bus.post(SignUpFragment.TAG);
+    }
+
+
+    public static SignUpFragment getInstance() {
+        return new SignUpFragment();
     }
 }

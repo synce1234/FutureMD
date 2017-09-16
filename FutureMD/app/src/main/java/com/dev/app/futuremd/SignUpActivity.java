@@ -16,7 +16,7 @@ import butterknife.OnClick;
 /**
  * Created by Admin on 9/16/2017.
  */
-
+//tinh.tran
 public class SignUpActivity extends AppCompatActivity {
 
     @BindView(R.id.et_sign_up_first_name)

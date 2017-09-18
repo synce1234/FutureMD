@@ -2,16 +2,14 @@ package com.dev.app.futuremd;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
-
-import com.squareup.otto.Bus;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -24,6 +22,8 @@ import butterknife.Unbinder;
 //tinh.tran
 public class SignUpFragment extends BaseFragment {
     public static final String TAG = "com.dev.app.futuremd.SignUpFragment";
+    @BindView(R.id.toolbar_logo)
+    ImageView toolBarLogo;
     @BindView(R.id.et_sign_up_first_name)
     EditText etSignUpFirstName;
     @BindView(R.id.et_sign_up_last_name)
@@ -54,11 +54,20 @@ public class SignUpFragment extends BaseFragment {
         unbinder.unbind();
     }
 
-    @OnClick(R.id.tv_sign_up_sign_in)
-    public void onViewClicked() {
-        LoginActivity.bus.post(SignUpFragment.TAG);
+    @OnClick({R.id.toolbar_logo, R.id.bt_sign_up_create, R.id.tv_sign_up_sign_in})
+    public void onViewClicked(View view) {
+        switch (view.getId()) {
+            case R.id.toolbar_logo:
+                getActivity().finish();
+                break;
+            case R.id.bt_sign_up_create:
+                LoginActivity.bus.post(LoginActivity.BusEvent.SIGN_UP);
+                break;
+            case R.id.tv_sign_up_sign_in:
+                LoginActivity.bus.post(LoginActivity.BusEvent.MOVE_TO_SIGN_IN);
+                break;
+        }
     }
-
 
     public static SignUpFragment getInstance() {
         return new SignUpFragment();

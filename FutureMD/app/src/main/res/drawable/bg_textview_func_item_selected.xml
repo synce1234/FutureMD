@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/ic_bg_selected_menu_nav"
+        android:left="0dp"
+        android:right="@dimen/padding_left_func_item">
+    </item>
+</layer-list>

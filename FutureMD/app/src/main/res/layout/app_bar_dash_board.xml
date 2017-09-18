@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.dev.app.futuremd.DashBoardActivity"
+    android:splitMotionEvents="false">
+    <RelativeLayout
+        android:id="@+id/rl_header"
+        android:layout_alignParentTop="true"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/nav_header_height"
+        android:background="@android:color/white"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent">
+
+        <ImageView
+            android:id="@+id/toolbar_header_bg"
+            android:src="@drawable/ic_dashboard_bg_header"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:scaleType="fitXY"
+            android:layout_gravity="left|center_vertical"
+            android:clickable="true"
+            android:background="?attr/actionBarItemBackground"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true" />
+
+        <ImageView
+            android:id="@+id/toolbar_logo"
+            android:src="@drawable/ic_nav_menu_light"
+            android:layout_width="?attr/actionBarSize"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_gravity="left|center_vertical"
+            android:clickable="true"
+            android:background="?attr/actionBarItemBackground"/>
+
+        <TextView
+            android:id="@+id/toolbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="?attr/actionBarSize"
+            android:textColor="@android:color/white"
+            android:gravity="center"
+            android:text="Dashboard"
+            android:layout_gravity="center"
+            android:textSize="@dimen/text_size_title"
+            android:layout_centerHorizontal="true"/>
+        <ImageView
+            android:id="@+id/iv_dashboard_avatar"
+            android:layout_width="@dimen/logo_size_dashboard"
+            android:layout_height="@dimen/logo_size_dashboard"
+            android:src="@mipmap/ic_launcher"
+            android:layout_marginRight="15dp"
+            android:layout_below="@+id/toolbar_logo"
+            android:layout_toStartOf="@+id/linearLayout2"
+            android:layout_marginTop="5dp" />
+        <LinearLayout
+            android:layout_width="@dimen/logo_size_dashboard"
+            android:layout_height="@dimen/logo_size_dashboard"
+            android:orientation="vertical"
+            android:layout_gravity="center"
+            android:id="@+id/linearLayout2"
+            android:layout_alignBottom="@+id/iv_dashboard_avatar"
+            android:layout_alignStart="@+id/toolbar_title"
+            android:gravity="center_vertical">
+            <TextView
+                android:id="@+id/tv_dashboard_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Jhon doe"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/text_size_subtitle_name"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/tv_dashboard_age"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="32 Age"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/text_size_subtitle"/>
+            <TextView
+                android:id="@+id/tv_dashboard_gender"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Male"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/text_size_subtitle"/>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <android.support.constraint.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/guideline_dashboard"
+        app:layout_constraintGuide_begin="@dimen/nav_header_height"
+        android:orientation="horizontal" />
+
+    <LinearLayout
+        android:id="@+id/ll_dashboard_item_my_account"
+        style="@style/CustomizedLinearLayoutFuncItem.Highlight"
+        app:layout_constraintBottom_toTopOf="@+id/ll_dashboard_item_medical_vault"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/ll_dashboard_item_find_doctor"
+        app:layout_constraintTop_toTopOf="@+id/guideline_dashboard"
+        >
+
+        <ImageView
+            android:layout_width="@dimen/image_size_func_item_dashboard"
+            android:layout_height="@dimen/image_size_func_item_dashboard"
+            android:src="@drawable/selector_imageview_dashboard_my_account"
+            />
+
+        <TextView
+            style="@style/CustomizedFuncItemTextViewInDashboard"
+            android:text="@string/title_my_account"
+            android:textColor="@drawable/selector_image_textview_dashboard"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_dashboard_item_find_doctor"
+        style="@style/CustomizedLinearLayoutFuncItem"
+        app:layout_constraintBottom_toTopOf="@+id/ll_dashboard_item_appointments"
+        app:layout_constraintLeft_toRightOf="@+id/ll_dashboard_item_my_account"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline_dashboard">
+
+        <ImageView
+            android:layout_width="@dimen/image_size_func_item_dashboard"
+            android:layout_height="@dimen/image_size_func_item_dashboard"
+            android:src="@drawable/selector_imageview_dashboard_find_doctor"/>
+
+        <TextView
+            style="@style/CustomizedFuncItemTextViewInDashboard"
+            android:text="@string/title_find_doctor"
+            android:textColor="@drawable/selector_image_textview_dashboard" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_dashboard_item_appointments"
+        style="@style/CustomizedLinearLayoutFuncItem.Highlight"
+        app:layout_constraintBottom_toTopOf="@+id/ll_dashboard_item_settings"
+        app:layout_constraintLeft_toRightOf="@+id/ll_dashboard_item_medical_vault"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ll_dashboard_item_find_doctor">
+
+        <ImageView
+            android:layout_width="@dimen/image_size_func_item_dashboard"
+            android:layout_height="@dimen/image_size_func_item_dashboard"
+            android:src="@drawable/selector_imageview_dashboard_appointments"/>
+
+        <TextView
+            style="@style/CustomizedFuncItemTextViewInDashboard"
+            android:text="@string/title_appointments"
+            android:textColor="@drawable/selector_image_textview_dashboard" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_dashboard_item_medical_vault"
+        style="@style/CustomizedLinearLayoutFuncItem"
+        app:layout_constraintBottom_toTopOf="@+id/ll_dashboard_item_favorites"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/ll_dashboard_item_appointments"
+        app:layout_constraintTop_toBottomOf="@+id/ll_dashboard_item_my_account">
+
+        <ImageView
+            android:layout_width="@dimen/image_size_func_item_dashboard"
+            android:layout_height="@dimen/image_size_func_item_dashboard"
+            android:src="@drawable/selector_imageview_dashboard_medical_vault"/>
+
+        <TextView
+            style="@style/CustomizedFuncItemTextViewInDashboard"
+            android:text="@string/title_medical_vault"
+            android:textColor="@drawable/selector_image_textview_dashboard" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_dashboard_item_favorites"
+        style="@style/CustomizedLinearLayoutFuncItem.Highlight"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/ll_dashboard_item_settings"
+        app:layout_constraintTop_toBottomOf="@+id/ll_dashboard_item_medical_vault">
+
+        <ImageView
+            android:layout_width="@dimen/image_size_func_item_dashboard"
+            android:layout_height="@dimen/image_size_func_item_dashboard"
+            android:src="@drawable/selector_imageview_dashboard_favorites"/>
+
+        <TextView
+            style="@style/CustomizedFuncItemTextViewInDashboard"
+            android:text="@string/title_favorites"
+            android:textColor="@drawable/selector_image_textview_dashboard"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_dashboard_item_settings"
+        style="@style/CustomizedLinearLayoutFuncItem"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/ll_dashboard_item_favorites"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ll_dashboard_item_appointments">
+
+        <ImageView
+            android:layout_width="@dimen/image_size_func_item_dashboard"
+            android:layout_height="@dimen/image_size_func_item_dashboard"
+            android:src="@drawable/selector_imageview_dashboard_settings" />
+
+        <TextView
+            style="@style/CustomizedFuncItemTextViewInDashboard"
+            android:text="@string/title_settings"
+            android:textColor="@drawable/selector_image_textview_dashboard"/>
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>

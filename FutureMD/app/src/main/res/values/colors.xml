@@ -5,5 +5,8 @@
     <color name="colorAccent">#0D47A1</color>
     <color name="colorHintText">#A8A8AA</color>
     <color name="colorUnderLineEditText">#F3F3F4</color>
-
+    <color name="colorFuncItemDashboardHighlight">#F5F5F5</color>
+    <color name="colorFuncItemDashboardPressed">#62A8EA</color>
+    <color name="colorBackgroundFindDoctor">#263238</color>
+    <color name="colorTextFinDoctorFilter">#C4C4C4</color>
 </resources>

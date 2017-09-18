@@ -4,6 +4,29 @@
         <item>MALE</item>
         <item>FEMALE</item>
     </string-array>
+
+    <string-array name="doctor_types">
+        <item>Type of doctor</item>
+    </string-array>
+
+    <string-array name="appointment_types">
+        <item>Appointment type</item>
+    </string-array>
+
     <string name="title_activity_login">LoginActivity</string>
     <string name="action_settings">Settings</string>
+    <string name="title_activity_dash_board">DashBoardActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="title_my_account">My Account</string>
+    <string name="title_find_doctor">Find Doctor</string>
+    <string name="title_medical_vault">Medical Vault</string>
+    <string name="title_appointments">Appointments</string>
+    <string name="title_favorites">Favorites</string>
+    <string name="title_messages">Messages</string>
+    <string name="title_invite_friends">Invite Friends</string>
+    <string name="title_support">Support</string>
+    <string name="title_settings">Settings</string>
 </resources>

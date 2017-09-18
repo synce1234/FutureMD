@@ -4,5 +4,34 @@
     <dimen name="space_between_two_field">10dp</dimen>
     <dimen name="space_between_title_input">3dp</dimen>
     <dimen name="text_size_login">14dp</dimen>
-    <dimen name="text_size_title">23dp</dimen>
+    <dimen name="text_size_title">20dp</dimen>
+    <dimen name="text_size_subtitle">13dp</dimen>
+    <dimen name="text_size_subtitle_name">15dp</dimen>
+
+    <dimen name="text_size_func_item">15dp</dimen>
+    <dimen name="padding_left_func_item">32dp</dimen>
+    <dimen name="height_func_item">54dp</dimen>
+
+    <dimen name="image_size_func_item_dashboard">48dp</dimen>
+
+    <!-- Find Doctor-->
+    <dimen name="height_edittext_find_doctor_searching">48dp</dimen>
+    <dimen name="size_imageview_find_doctor_filter">32dp</dimen>
+    <dimen name="height_textview_find_doctor_filter_data">32dp</dimen>
+    <dimen name="text_size_find_doctor_filter_data">10dp</dimen>
+    <dimen name="padding_left_find_doctor_content">16dp</dimen>
+    <dimen name="padding_right_find_doctor_content">16dp</dimen>
+
+    <dimen name="size_imageview_item_find_doctor_avatar">48dp</dimen>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">64dp</dimen>
+    <dimen name="activity_vertical_margin">24dp</dimen>
+    <dimen name="nav_header_vertical_spacing">16dp</dimen>
+    <dimen name="nav_header_height">140dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="logo_size_dashboard">64dp</dimen>
+    <dimen name="list_item_spacing">16dp</dimen>
+    <dimen name="list_item_spacing_half">8dp</dimen>
+
 </resources>

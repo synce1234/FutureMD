@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.dev.app.futuremd.FindDoctorActivity"
+    >
+
+    <RelativeLayout
+        android:id="@+id/rl_filter"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/rl_header"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:background="@color/colorBackgroundFindDoctor"
+        android:paddingLeft="@dimen/padding_left_find_doctor_content"
+        android:paddingRight="@dimen/padding_right_find_doctor_content">
+        <EditText
+            android:id="@+id/et_find_doctor_searching"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_edittext_find_doctor_searching"
+            android:background="@android:color/transparent"
+            android:hint="Search for doctor.."
+            android:textColor="@android:color/white"
+            android:textColorHint="@color/colorTextFinDoctorFilter"
+            android:textSize="@dimen/text_size_login"
+            android:paddingRight="@dimen/size_imageview_find_doctor_filter"
+            android:lines="1"
+            />
+
+        <ImageView
+            android:id="@+id/iv_find_doctor_filter"
+            android:layout_width="@dimen/size_imageview_find_doctor_filter"
+            android:layout_height="@dimen/height_edittext_find_doctor_searching"
+            app:srcCompat="@drawable/ic_find_doctor_filter"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:clickable="true"
+            android:background="?attr/actionBarItemBackground"/>
+        <View
+            android:id="@+id/v_find_doctor_divide_searching_filter_data"
+            android:layout_width="match_parent"
+            android:layout_height="2px"
+            android:layout_below="@+id/et_find_doctor_searching"
+            android:background="@color/colorUnderLineEditText"
+            android:alpha="0.2"
+            android:layout_marginRight="16dp"/>
+        <TextView
+            android:id="@+id/tv_find_doctor_filter_data"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_textview_find_doctor_filter_data"
+            android:layout_below="@+id/v_find_doctor_divide_searching_filter_data"
+            android:layout_alignParentStart="true"
+            android:text="Listview - Cardiologit - Homevisit - 5m Distance"
+            android:textColor="@color/colorTextFinDoctorFilter"
+            android:textSize="@dimen/text_size_find_doctor_filter_data"
+            android:gravity="center_vertical"/>
+    </RelativeLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_find_doctor_list_doctors"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rl_filter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <RelativeLayout
+        android:id="@+id/rl_header"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="0dp"
+        android:background="@android:color/white"
+        android:minHeight="?attr/actionBarSize"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/toolbar_logo"
+            android:layout_width="?attr/actionBarSize"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_gravity="left|center_vertical"
+            android:background="?attr/actionBarItemBackground"
+            android:clickable="true"
+            android:src="@drawable/ic_nav_menu" />
+
+        <TextView
+            android:id="@+id/toolbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="Find Doctor"
+            android:textColor="@android:color/secondary_text_light"
+            android:textSize="@dimen/text_size_title" />
+
+        <ImageView
+            android:id="@+id/toolbar_search"
+            android:layout_width="?attr/actionBarSize"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="left|center_vertical"
+            android:background="?attr/actionBarItemBackground"
+            android:clickable="true"
+            android:src="@drawable/ic_find_doctor_search" />
+
+    </RelativeLayout>
+</android.support.constraint.ConstraintLayout>

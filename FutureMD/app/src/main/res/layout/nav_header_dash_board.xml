@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/nav_header_height"
+    android:background="@color/colorPrimary"
+    android:gravity="center"
+    android:orientation="horizontal"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark">
+
+    <ImageView
+        android:id="@+id/iv_dashboard_avatar"
+        android:layout_width="@dimen/logo_size_dashboard"
+        android:layout_height="@dimen/logo_size_dashboard"
+        android:src="@mipmap/ic_launcher"
+        android:layout_marginRight="15dp"/>
+
+    <LinearLayout
+        android:id="@+id/ll_dashboard_nav_info"
+        android:layout_width="@dimen/logo_size_dashboard"
+        android:layout_height="@dimen/logo_size_dashboard"
+        android:layout_gravity="center"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_dashboard_nav_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Jhon doe"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/text_size_subtitle_name"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_dashboard_nav_age"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="32 Age"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/text_size_subtitle" />
+
+        <TextView
+            android:id="@+id/tv_dashboard_nav_gender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Male"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/text_size_subtitle" />
+    </LinearLayout>
+
+</LinearLayout>

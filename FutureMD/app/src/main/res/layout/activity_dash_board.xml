@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:openDrawer="start">
+
+    <include
+        layout="@layout/app_bar_dash_board"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <android.support.design.widget.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true"
+        app:headerLayout="@layout/nav_header_dash_board"
+        android:background="@android:color/white"
+        >
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/nav_header_height">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingTop="@dimen/text_size_func_item"
+                android:paddingBottom="@dimen/text_size_func_item"
+                android:splitMotionEvents="false">
+                <TextView
+                    android:id="@+id/tv_dashboard_nav_item_my_account"
+                    style="@style/CustomizedFuncItemTextViewInMenu"
+                    android:text="@string/title_my_account"/>
+                <TextView
+                    android:id="@+id/tv_dashboard_nav_item_find_doctor"
+                    style="@style/CustomizedFuncItemTextViewInMenu"
+                    android:text="@string/title_find_doctor"/>
+                <TextView
+                    android:id="@+id/tv_dashboard_nav_item_medical_vault"
+                    style="@style/CustomizedFuncItemTextViewInMenu"
+                    android:text="@string/title_medical_vault"/>
+                <TextView
+                    android:id="@+id/tv_dashboard_nav_item_appointments"
+                    style="@style/CustomizedFuncItemTextViewInMenu"
+                    android:text="@string/title_appointments"/>
+                <TextView
+                    android:id="@+id/tv_dashboard_nav_item_favorites"
+                    style="@style/CustomizedFuncItemTextViewInMenu"
+                    android:text="@string/title_favorites"/>
+                <TextView
+                    android:id="@+id/tv_dashboard_nav_item_messages"
+                    style="@style/CustomizedFuncItemTextViewInMenu"
+                    android:text="@string/title_messages"/>
+                <TextView
+                    android:id="@+id/tv_dashboard_nav_item_invite_friends"
+                    style="@style/CustomizedFuncItemTextViewInMenu"
+                    android:text="@string/title_invite_friends"/>
+                <TextView
+                    android:id="@+id/tv_dashboard_nav_item_support"
+                    style="@style/CustomizedFuncItemTextViewInMenu"
+                    android:text="@string/title_support"/>
+            </LinearLayout>
+        </ScrollView>
+    </android.support.design.widget.NavigationView>
+
+</android.support.v4.widget.DrawerLayout>

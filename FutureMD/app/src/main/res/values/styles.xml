@@ -14,6 +14,10 @@
         <item name="android:windowContentOverlay">@null</item>
     </style>
 
+    <style name="CustomizedDialog" parent="Theme.AppCompat.Light.Dialog">
+
+    </style>
+
     <style name="CustomizedButton">
         <item name="android:textAllCaps">false</item>
         <item name="android:textSize">@dimen/text_size_login</item>
@@ -28,7 +32,48 @@
         <item name="android:textColor">@color/colorHintText</item>
     </style>
 
+    <style name="CustomizedFuncItemTextView">
+        <item name="android:textSize">@dimen/text_size_func_item</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="CustomizedFuncItemTextViewInMenu" parent="CustomizedFuncItemTextView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/height_func_item</item>
+        <item name="android:textColor">@drawable/selector_textview_textcolor_funcitem</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingLeft">@dimen/padding_left_func_item</item>
+        <item name="android:background">@drawable/selector_textview_bg_funcitem</item>
+        <item name="android:clickable">true</item>
+        <item name="android:selectable">true</item>
+    </style>
+
+    <style name="CustomizedLinearLayoutFuncItem">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:clickable">true</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/selector_linearlayout_bg_funcitem_dashboard1</item>
+        android:addStatesFromChildren="true"
+    </style>
+
+    <style name="CustomizedLinearLayoutFuncItem.Highlight" parent="CustomizedLinearLayoutFuncItem">
+        <item name="android:background">@drawable/selector_linearlayout_bg_funcitem_dashboard2</item>
+    </style>
+
+    <style name="CustomizedFuncItemTextViewInDashboard" parent="CustomizedFuncItemTextView">
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:selectable">true</item>
+    </style>
+
     <style name="FullScreen.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="FullScreen.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>

@@ -2,7 +2,6 @@ package com.dev.app.futuremd;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,15 +17,15 @@ import butterknife.Unbinder;
 public class SignInFragment extends BaseFragment {
     public static final String TAG = "com.dev.app.futuremd.SignInFragment";
 
-    @BindView(R.id.et_login_username)
+    @BindView(R.id.et_sign_in_username)
     EditText etLoginUsername;
-    @BindView(R.id.et_login_password)
+    @BindView(R.id.et_sign_in_password)
     EditText etLoginPassword;
-    @BindView(R.id.bt_login_sign_in)
-    Button btLoginSignIn;
-    @BindView(R.id.tv_login_sign_up)
-    TextView tvLoginSignUp;
     Unbinder unbinder;
+    @BindView(R.id.bt_sign_in_sign_in)
+    Button btLoginSignIn;
+    @BindView(R.id.tv_sign_in_sign_up)
+    TextView tvLoginSignUp;
 
     @Nullable
     @Override
@@ -42,13 +41,20 @@ public class SignInFragment extends BaseFragment {
         unbinder.unbind();
     }
 
-    @OnClick(R.id.tv_login_sign_up)
-    public void onViewClicked() {
-        LoginActivity.bus.post(SignInFragment.TAG);
-    }
-
 
     public static SignInFragment getInstance() {
         return new SignInFragment();
+    }
+
+    @OnClick({R.id.bt_sign_in_sign_in, R.id.tv_sign_in_sign_up})
+    public void onViewClicked(View view) {
+        switch (view.getId()) {
+            case R.id.bt_sign_in_sign_in:
+                LoginActivity.bus.post(LoginActivity.BusEvent.SIGN_IN);
+                break;
+            case R.id.tv_sign_in_sign_up:
+                LoginActivity.bus.post(LoginActivity.BusEvent.MOVE_TO_SIGN_UP);
+                break;
+        }
     }
 }

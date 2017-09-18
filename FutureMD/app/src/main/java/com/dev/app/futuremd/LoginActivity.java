@@ -1,11 +1,8 @@
 package com.dev.app.futuremd;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.view.View;
 
 import com.squareup.otto.Bus;
 import com.squareup.otto.Subscribe;
@@ -25,15 +22,34 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     @Subscribe
-    public void getMessage(String s) {
-        if(s.equals(SignInFragment.TAG)){
-            //Move to SignUpFragment to start signing up;
-            SignUpFragment signUpFragment = SignUpFragment.getInstance();
-            getSupportFragmentManager().beginTransaction().replace(R.id.fl_container,signUpFragment, signUpFragment.TAG).commit();
-        }else if(s.equals(SignUpFragment.TAG)){
-            //Move to SignInFragment to start signing in;
-            SignInFragment signInFragment = SignInFragment.getInstance();
-            getSupportFragmentManager().beginTransaction().replace(R.id.fl_container,signInFragment, SignInFragment.TAG).commit();
+    public void getMessage(BusEvent busEvent) {
+        switch (busEvent){
+            case SIGN_IN:
+                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                startActivity(intent);
+                break;
+
+            case SIGN_UP:
+
+                break;
+
+            case MOVE_TO_SIGN_UP:
+                SignUpFragment signUpFragment = SignUpFragment.getInstance();
+                getSupportFragmentManager().beginTransaction().replace(R.id.fl_container,signUpFragment, signUpFragment.TAG).commit();
+                break;
+
+            case MOVE_TO_SIGN_IN:
+                SignInFragment signInFragment = SignInFragment.getInstance();
+                getSupportFragmentManager().beginTransaction().replace(R.id.fl_container,signInFragment, SignInFragment.TAG).commit();
+
+                break;
         }
+    }
+
+    public enum BusEvent{
+        MOVE_TO_SIGN_UP,
+        MOVE_TO_SIGN_IN,
+        SIGN_IN,
+        SIGN_UP
     }
 }

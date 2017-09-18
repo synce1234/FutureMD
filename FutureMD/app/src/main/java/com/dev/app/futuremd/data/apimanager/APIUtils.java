@@ -1,6 +1,4 @@
-package Data.APIManage;
-
-import retrofit2.Retrofit;
+package com.dev.app.futuremd.data.apimanager;
 
 /**
  * Created by NEO on 9/16/2017.

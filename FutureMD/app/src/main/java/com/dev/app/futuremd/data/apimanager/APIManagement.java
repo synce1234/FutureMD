@@ -1,4 +1,4 @@
-package Data.APIManage;
+package com.dev.app.futuremd.data.apimanager;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;

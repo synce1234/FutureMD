@@ -1,8 +1,7 @@
-package Data.ResponseInfo;
+package com.dev.app.futuremd.data.dataresponse;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.internal.Primitives;
 
 import java.sql.Date;
 

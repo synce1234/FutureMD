@@ -1,10 +1,15 @@
-package Data.APIManage;
+package com.dev.app.futuremd.data.apimanager;
+
+import com.dev.app.futuremd.data.dataresponse.UserPatient;
 
 import java.util.List;
 
-import Data.ResponseInfo.UserPatient;
 import retrofit2.Call;
+import retrofit2.http.Body;
+import retrofit2.http.Field;
+import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
+import retrofit2.http.POST;
 import retrofit2.http.Query;
 
 /**
@@ -17,4 +22,7 @@ public interface MDService {
     Call<List<UserPatient>> getPatientInfo(@Query("username") String username, @Query("password") String password);
 
     //Post Patient Register info
+    @POST("http://post")
+    @FormUrlEncoded
+    Call<UserPatient> setPatientInfo(@Body UserPatient patientInfo);
 }

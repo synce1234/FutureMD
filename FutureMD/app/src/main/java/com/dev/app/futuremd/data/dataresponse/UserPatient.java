@@ -3,13 +3,15 @@ package com.dev.app.futuremd.data.dataresponse;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-import java.sql.Date;
+import java.io.Serializable;
+import java.util.Date;
+
 
 /**
  * Created by NEO on 9/16/2017.
  */
 
-public class UserPatient {
+public class UserPatient implements Serializable {
     @SerializedName("username")
     @Expose
     private String username;

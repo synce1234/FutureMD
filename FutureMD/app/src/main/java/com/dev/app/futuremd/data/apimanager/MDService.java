@@ -19,7 +19,7 @@ import retrofit2.http.Query;
 public interface MDService {
     //Get Patient Login info
     @GET("http://kajlfdkj.com")
-    Call<List<UserPatient>> getPatientInfo(@Query("username") String username, @Query("password") String password);
+    Call<UserPatient> getPatientInfo(@Query("username") String username, @Query("password") String password);
 
     //Post Patient Register info
     @POST("http://post")

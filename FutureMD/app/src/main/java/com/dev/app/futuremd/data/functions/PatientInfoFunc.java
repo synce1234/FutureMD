@@ -20,19 +20,20 @@ public class PatientInfoFunc {
         this.mdService = service;
     }
 
-    public UserPatient getPatientInfo(String username, String password) {
+    public void getPatientInfo(String username, String password) {
         final UserPatient info = new UserPatient();
-        mdService.getPatientInfo(username, password).enqueue(new Callback<List<UserPatient>>() {
+        mdService.getPatientInfo(username, password).enqueue(new Callback<UserPatient>() {
             @Override
-            public void onResponse(Call<List<UserPatient>> call, Response<List<UserPatient>> response) {
+            public void onResponse(Call<UserPatient> call, Response<UserPatient> response) {
                 if(response.isSuccessful()) {
-                    if(response.body().size() > 0) {
-                        info.setFullName(response.body().get(0).getFullName());
-                        info.setEmail(response.body().get(0).getEmail());
-                        info.setGender(response.body().get(0).getGender());
-                        info.setPhoneNumber(response.body().get(0).getPhoneNumber());
-                        info.setBirthday(response.body().get(0).getBirthday());
-                        info.setAge(response.body().get(0).getAge());
+                    if(response.body() != null) {
+                        
+                        info.setFullName(response.body().getFullName());
+                        info.setEmail(response.body().getEmail());
+                        info.setGender(response.body().getGender());
+                        info.setPhoneNumber(response.body().getPhoneNumber());
+                        info.setBirthday(response.body().getBirthday());
+                        info.setAge(response.body().getAge());
                     }
                 } else {
                     int statusCode = response.code();
@@ -40,12 +41,10 @@ public class PatientInfoFunc {
             }
 
             @Override
-            public void onFailure(Call<List<UserPatient>> call, Throwable t) {
+            public void onFailure(Call<UserPatient> call, Throwable t) {
 
             }
         });
-
-        return info;
     }
 
     public void setPatientInfo(UserPatient patientInfo) {

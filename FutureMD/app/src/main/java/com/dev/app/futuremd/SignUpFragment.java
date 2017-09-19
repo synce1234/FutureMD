@@ -11,6 +11,13 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.dev.app.futuremd.data.dataresponse.UserPatient;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -42,8 +49,11 @@ public class SignUpFragment extends BaseFragment {
     TextView tvSignUpSignIn;
     Unbinder unbinder;
 
+    UserPatient userPatient;
+
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_sign_up, null, true);
+        userPatient = new UserPatient();
         unbinder = ButterKnife.bind(this, view);
         return view;
     }
@@ -61,6 +71,14 @@ public class SignUpFragment extends BaseFragment {
                 getActivity().finish();
                 break;
             case R.id.bt_sign_up_create:
+                Date dob = stringToDate(etSignUpBirthday.getText().toString());
+                userPatient.setFullName(etSignUpFirstName.getText().toString() + " " + etSignUpLastName.getText().toString());
+                userPatient.setEmail(etSignUpEmail.getText().toString());
+                userPatient.setBirthday(dob);
+                userPatient.setPassword(etSignUpPassword.getText().toString());
+                userPatient.setGender(spinnerSignUpGender.getSelectedItem().toString());
+                userPatient.setAge(getAge(dob));
+                ((LoginActivity) getActivity()).setSignUpInfo(userPatient);
                 LoginActivity.bus.post(LoginActivity.BusEvent.SIGN_UP);
                 break;
             case R.id.tv_sign_up_sign_in:
@@ -71,5 +89,25 @@ public class SignUpFragment extends BaseFragment {
 
     public static SignUpFragment getInstance() {
         return new SignUpFragment();
+    }
+
+    private Date stringToDate(String s) {
+        SimpleDateFormat format = new SimpleDateFormat("MMMMM dd, yyyy");
+        try {
+            Date date = format.parse(s);
+            return date;
+        } catch (ParseException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            return Calendar.getInstance().getTime();
+        }
+    }
+
+    private int getAge(Date dob){
+        Calendar today = Calendar.getInstance();
+        Calendar dateOfBirth = Calendar.getInstance();
+        dateOfBirth.setTime(dob);
+        int age = today.get(Calendar.YEAR) - dateOfBirth.get(Calendar.YEAR);
+        return age;
     }
 }

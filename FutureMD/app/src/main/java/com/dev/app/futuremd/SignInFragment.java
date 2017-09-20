@@ -9,6 +9,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.dev.app.futuremd.data.Utils.AESUtils;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -50,8 +52,8 @@ public class SignInFragment extends BaseFragment {
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.bt_sign_in_sign_in:
-                String email = etLoginUsername.getText().toString();
-                String password = etLoginPassword.getText().toString();
+                String email = AESUtils.encrypt(etLoginUsername.getText().toString());
+                String password = AESUtils.encrypt(etLoginPassword.getText().toString());
                 ((LoginActivity) getActivity()).setLoginInfo(email, password);
                 LoginActivity.bus.post(LoginActivity.BusEvent.SIGN_IN);
                 break;

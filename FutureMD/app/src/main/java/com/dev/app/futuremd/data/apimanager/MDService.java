@@ -21,6 +21,10 @@ public interface MDService {
     @GET("http://kajlfdkj.com")
     Call<UserPatient> getPatientInfo(@Query("username") String username, @Query("password") String password);
 
+    @POST("mobile/login")
+    @FormUrlEncoded
+    Call<UserPatient> getPatientInfo(@Query("token") String token, @Query("username") String username, @Query("password") String password);
+
     //Post Patient Register info
     @POST("http://post")
     @FormUrlEncoded

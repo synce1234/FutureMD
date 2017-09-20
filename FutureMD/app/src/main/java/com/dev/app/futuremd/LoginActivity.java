@@ -41,7 +41,7 @@ public class LoginActivity extends AppCompatActivity {
     public void getMessage(BusEvent busEvent) {
         switch (busEvent){
             case SIGN_IN:
-                loginInfo(email,password);
+                loginInfo(Instance.TOKEN, email,password);
                 break;
 
             case SIGN_UP:
@@ -68,9 +68,9 @@ public class LoginActivity extends AppCompatActivity {
         SIGN_UP
     }
 
-    public void loginInfo(String email, String password) {
+    public void loginInfo(String token, String email, String password) {
         final UserPatient info = new UserPatient();
-        mdService.getPatientInfo(email, password).enqueue(new Callback<UserPatient>() {
+        mdService.getPatientInfo(token, email, password).enqueue(new Callback<UserPatient>() {
             @Override
             public void onResponse(Call<UserPatient> call, Response<UserPatient> response) {
                 if(response.isSuccessful()) {

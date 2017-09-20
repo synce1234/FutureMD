@@ -5,7 +5,7 @@ package com.dev.app.futuremd.data.apimanager;
  */
 
 public class APIUtils {
-    public static final String BASE_URL = "";
+    public static final String BASE_URL = "http://futuremd.nanobiotechcrm.com";
 
     public static MDService getService(){
         return APIManagement.getClient(BASE_URL).create(MDService.class);

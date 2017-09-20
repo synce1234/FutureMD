@@ -9,4 +9,8 @@
     <color name="colorFuncItemDashboardPressed">#62A8EA</color>
     <color name="colorBackgroundFindDoctor">#263238</color>
     <color name="colorTextFinDoctorFilter">#C4C4C4</color>
+    <color name="color_label_create_booking">#cdcdce</color>
+    <color name="colorBarRate">#F1C40F</color>
+    <color name="colorAppointmentStateProcessed">#50D2C2</color>
+    <color name="colorAppointmentStateCanceled">#D667CD</color>
 </resources>

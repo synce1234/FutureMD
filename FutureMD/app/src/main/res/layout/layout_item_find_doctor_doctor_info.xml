@@ -27,6 +27,7 @@
         android:layout_marginStart="15dp">
         <TextView
             android:id="@+id/tv_item_doctor_info_name"
+            style="@style/BaseCustomizedTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Dr. Finola Jeswan"
@@ -34,10 +35,12 @@
             android:lines="1"/>
         <TextView
             android:id="@+id/tv_item_doctor_info_speciality"
+            style="@style/BaseCustomizedTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Cardiologist Surgeon"
-            android:textAppearance="?android:textAppearanceSmall"
+            android:textColor="@color/colorHintText"
+            android:textSize="@dimen/text_size_subtitle"
             android:lines="1"/>
     </LinearLayout>
 
@@ -52,6 +55,7 @@
         android:layout_marginLeft="8dp">
         <TextView
             android:id="@+id/tv_item_doctor_info_location"
+            style="@style/BaseCustomizedTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Home Visit"
@@ -60,8 +64,10 @@
             android:lines="1"/>
         <TextView
             android:id="@+id/tv_item_doctor_info_price"
+            style="@style/BaseCustomizedTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/colorHintText"
             android:text="200$ / visit"
             android:textSize="10dp"
             android:lines="1"/>

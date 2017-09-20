@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="16dp"
+    android:paddingLeft="20dp"
+    android:paddingRight="16dp"
+    android:paddingBottom="24dp"
+    android:clickable="true"
+    android:background="?attr/selectableItemBackground">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/ll_item_past_appointments_datetime">
+
+        <TextView
+            android:id="@+id/tv_item_past_appointments_time"
+            style="@style/BaseCustomizedTextView.AppointmentItemHighLightTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="8:30 AM"
+            android:lines="1"/>
+
+        <TextView
+            android:id="@+id/tv_item_past_appointments_date"
+            style="@style/BaseCustomizedTextView.AppointmentItemSubTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="27 MAY 17"
+            android:lines="1"
+            android:layout_marginTop="8dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_item_past_appointments_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/ll_item_past_appointments_datetime"
+        android:layout_marginStart="24dp"
+        android:layout_toStartOf="@+id/view_item_past_appointments_status"
+        android:layout_marginEnd="8dp">
+
+        <TextView
+            android:id="@+id/tv_item_past_appointments_title"
+            style="@style/BaseCustomizedTextView.AppointmentItemHighLightTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:lines="1"
+            android:text="Appointment # 2542" />
+
+        <RatingBar
+            android:id="@+id/rb_item_past_appointments_rating"
+            style="@style/Widget.AppCompat.RatingBar.Small"
+            android:theme="@style/CustomizedRateBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:isIndicator="false"
+            android:numStars="5"
+            android:rating="5"
+            android:stepSize="1"
+            android:layout_marginTop="8dp"
+            />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view_item_past_appointments_status"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:layout_alignParentEnd="true"
+        android:background="@drawable/ic_appointment_state_processed"
+
+        android:layout_marginTop="4dp"/>
+</RelativeLayout>

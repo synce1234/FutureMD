@@ -112,6 +112,7 @@ public class MainActivity extends AppCompatActivity {
             case R.id.tv_nav_item_medical_vault:
                 break;
             case R.id.tv_nav_item_appointments:
+                openFragment(MyAppointmentsFragment.TAG);
                 break;
             case R.id.tv_nav_item_favorites:
                 break;
@@ -132,6 +133,9 @@ public class MainActivity extends AppCompatActivity {
         switch (tag){
             case FindDoctorFragment.TAG:
                 baseFragment = new FindDoctorFragment();
+                break;
+            case MyAppointmentsFragment.TAG:
+                baseFragment = new MyAppointmentsFragment();
                 break;
         }
 

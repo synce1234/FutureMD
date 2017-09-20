@@ -19,6 +19,7 @@
         android:paddingRight="@dimen/padding_right_find_doctor_content">
         <EditText
             android:id="@+id/et_find_doctor_searching"
+            style="@style/BaseCustomizedTextView"
             android:layout_width="match_parent"
             android:layout_height="@dimen/height_edittext_find_doctor_searching"
             android:background="@android:color/transparent"
@@ -49,6 +50,7 @@
             android:layout_marginRight="16dp"/>
         <TextView
             android:id="@+id/tv_find_doctor_filter_data"
+            style="@style/BaseCustomizedTextView"
             android:layout_width="match_parent"
             android:layout_height="@dimen/height_textview_find_doctor_filter_data"
             android:layout_below="@+id/v_find_doctor_divide_searching_filter_data"
@@ -92,6 +94,7 @@
 
         <TextView
             android:id="@+id/toolbar_title"
+            style="@style/CustomizedTitleTextView"
             android:layout_width="wrap_content"
             android:layout_height="?attr/actionBarSize"
             android:layout_centerHorizontal="true"
@@ -99,7 +102,7 @@
             android:gravity="center"
             android:text="Find Doctor"
             android:textColor="@android:color/secondary_text_light"
-            android:textSize="@dimen/text_size_title" />
+            android:textSize="@dimen/text_size_toolbar_title"/>
 
         <ImageView
             android:id="@+id/toolbar_search"

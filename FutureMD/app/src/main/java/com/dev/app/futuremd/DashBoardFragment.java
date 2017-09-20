@@ -69,6 +69,7 @@ public class DashBoardFragment extends BaseFragment {
                 MainActivity.bus.post(FindDoctorFragment.TAG);
                 break;
             case R.id.ll_dashboard_item_appointments:
+                MainActivity.bus.post(MyAppointmentsFragment.TAG);
                 break;
             case R.id.ll_dashboard_item_medical_vault:
                 break;

@@ -11,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.dev.app.futuremd.data.Utils.AESUtils;
 import com.dev.app.futuremd.data.dataresponse.UserPatient;
 
 import java.text.ParseException;
@@ -49,11 +50,11 @@ public class SignUpFragment extends BaseFragment {
     TextView tvSignUpSignIn;
     Unbinder unbinder;
 
-    UserPatient userPatient;
+    //UserPatient userPatient;
 
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_sign_up, null, true);
-        userPatient = new UserPatient();
+        //userPatient = new UserPatient();
         unbinder = ButterKnife.bind(this, view);
         return view;
     }
@@ -71,14 +72,11 @@ public class SignUpFragment extends BaseFragment {
                 getActivity().finish();
                 break;
             case R.id.bt_sign_up_create:
-                Date dob = stringToDate(etSignUpBirthday.getText().toString());
-                userPatient.setFullName(etSignUpFirstName.getText().toString() + " " + etSignUpLastName.getText().toString());
-                userPatient.setEmail(etSignUpEmail.getText().toString());
-                userPatient.setBirthday(dob);
-                userPatient.setPassword(etSignUpPassword.getText().toString());
-                userPatient.setGender(spinnerSignUpGender.getSelectedItem().toString());
-                userPatient.setAge(getAge(dob));
-                ((LoginActivity) getActivity()).setSignUpInfo(userPatient);
+                String firstName = etSignUpFirstName.getText().toString();
+                String lastName = etSignUpLastName.getText().toString();
+                String email = AESUtils.encrypt(etSignUpEmail.getText().toString());
+                String password = AESUtils.encrypt(etSignUpPassword.getText().toString());
+                ((LoginActivity) getActivity()).setSignUpInfo(firstName, lastName, email, password);
                 LoginActivity.bus.post(LoginActivity.BusEvent.SIGN_UP);
                 break;
             case R.id.tv_sign_up_sign_in:

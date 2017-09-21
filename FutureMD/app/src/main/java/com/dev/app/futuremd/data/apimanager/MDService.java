@@ -1,5 +1,6 @@
 package com.dev.app.futuremd.data.apimanager;
 
+import com.dev.app.futuremd.data.dataresponse.DataResponse;
 import com.dev.app.futuremd.data.dataresponse.UserPatient;
 
 import java.util.List;
@@ -22,11 +23,9 @@ public interface MDService {
     Call<UserPatient> getPatientInfo(@Query("username") String username, @Query("password") String password);
 
     @POST("mobile/login")
-    @FormUrlEncoded
-    Call<UserPatient> getPatientInfo(@Query("token") String token, @Query("username") String username, @Query("password") String password);
+    Call<DataResponse> getPatientInfo(@Query("token") String token, @Query("username") String username, @Query("password") String password);
 
     //Post Patient Register info
-    @POST("http://post")
-    @FormUrlEncoded
-    Call<UserPatient> setPatientInfo(@Body UserPatient patientInfo);
+    @POST("mobile/register")
+    Call<DataResponse> setPatientInfo(@Query("token") String token, @Query("first") String firstName, @Query("last") String lastName, @Query("username") String username, @Query("password") String password);
 }

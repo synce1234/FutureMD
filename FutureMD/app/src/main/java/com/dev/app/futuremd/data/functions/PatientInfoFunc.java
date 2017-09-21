@@ -47,7 +47,7 @@ public class PatientInfoFunc {
         });
     }
 
-    public void setPatientInfo(UserPatient patientInfo) {
+    /*public void setPatientInfo(UserPatient patientInfo) {
         mdService.setPatientInfo(patientInfo).enqueue(new Callback<UserPatient>() {
             @Override
             public void onResponse(Call<UserPatient> call, Response<UserPatient> response) {
@@ -61,5 +61,5 @@ public class PatientInfoFunc {
 
             }
         });
-    }
+    }*/
 }

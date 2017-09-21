@@ -1,0 +1,71 @@
+API
+Notes: 
+1. Every API is POST method
+2. BASE_URL: http://futuremd.nanobiotechcrm.com/ (This link will be changed when going on line)
+3. All route return json data with "status" and "message" parameter. "message" could be NULL. "status" always returns "success" or "fail"
+4. All endpoint requires "token" parameter. Token is: cg8frjGNTWpyZw1TqXuN9QUDosmpMO6f
+DELETED 5. This will be removed, all parameter will not be encrypted: With parameter need be encrypted, use AES-256-CBC Base64 key: base64:3oMb6UAUW/SUmps/fd6EV99BrhyTEsmzSnLbMqiXrN4=
+
+List API:
+
+1. MOBILE LOGIN ENDPOINT
+---------------------
+Endpoint: mobile/login
+Parameters:
+ token
+ username
+ password
+Details:
+ Username & password parameters must be encrypted.
+ For iOS, use "LaraCrypt" to accomplish this.
+
+2. REGISTER ENDPOINT
+---------------------
+Endpoint: mobile/register
+Parameters:
+ token
+ first
+ last
+ username
+ password
+Details:
+ PLEASE NOTE: ONLY PATIENTS can register! A doctor does NOT have the ability to register.
+
+ Username & password parameters must be encrypted.
+ For iOS, use "LaraCrypt" to accomplish this.
+ Username should be the USER EMAIL ADDRESS.
+ first is user FIRST NAME
+ last is user LAST NAME
+
+ After a user (patient) registers, they should be taken to a new view where they will 
+ fill out extra details that are required to use the system.
+
+3. FORGOT PW ENDPOINT
+---------------------
+Endpoint: mobile/forgotPw
+Parameters:
+ token
+ email
+Details:
+ Email should be the USER EMAIL ADDRESS.
+ A response of "status" => "fail" will be given with a "message" if the user does not exist in the system.
+ A response of "status" => "success" will be given with a "message" if the user exists and we sent a reset password email to their email address.
+ UPDATE TO USER LOGIN ENDPOINT: I will also return an extra parameter in my response called "user_id" with the user's system ID.
+I will also add user_id in the REGISTER ENDPOINT if successful.
+
+4. GET APPOINTMENTS ENDPOINT
+---------------------
+Endpoint: mobile/getAppointments
+Parameters:
+ token
+ user_id
+ when
+Details:
+ user_id is the user that is requesting the appointments. You should save user_id after a user logs in (the login endpoint returns user_id)
+ "when" parameter is OPTIONAL.
+ use "when" to specify if we are getting UPCOMING appointments or PAST appointments.
+ "when" can be NULL or set to the following two values: "upcoming" OR "past"
+ A response of "status" => "success", "data" => $appts will be returned.
+  the "data" key in the response will contain appointment data.
+  "appointmentType", "Status", "Doctor", and "Patient" objects/relationships will be found within the "data" key. Use these objects to display the needed information.
+please note that you will need to do a sample request to the endpoint when you are ready to get see all objects/values in the "data" key/array.

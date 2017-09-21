@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <layer-list>
+
+            <item android:left="0dp">
+
+                <shape  android:shape="rectangle">
+
+                    <size android:height="100dp" android:width="0.1dp" />
+                    <solid android:color="#e2e2e3"/>
+                </shape>
+            </item>
+
+            <item android:left="4dp">
+
+                <shape  android:shape="rectangle">
+
+                    <size android:height="100dp" android:width="100dp" />
+                    <solid android:color="@color/background_info_panel"/>
+                </shape>
+            </item>
+
+        </layer-list>
+    </item>
+
+</selector>

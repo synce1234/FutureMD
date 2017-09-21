@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white">
+    <RelativeLayout
+        android:id="@+id/rl_header"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:background="@android:color/white"
+        android:minHeight="?attr/actionBarSize"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/toolbar_logo"
+            android:layout_width="?attr/actionBarSize"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_gravity="left|center_vertical"
+            android:background="?attr/actionBarItemBackground"
+            android:clickable="true"
+            android:src="@drawable/ic_nav_back" />
+
+        <TextView
+            android:id="@+id/toolbar_title"
+            style="@style/CustomizedTitleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="Appointment # 3521 Review"
+            android:textColor="@android:color/secondary_text_light"
+            android:textSize="@dimen/text_size_toolbar_title" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_appointment_info"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:paddingBottom="24dp"
+        android:paddingLeft="32dp"
+        android:paddingRight="32dp"
+        android:paddingTop="24dp"
+        app:layout_constraintTop_toBottomOf="@+id/rl_header"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:id="@+id/ll_item_past_appointments_datetime">
+
+            <TextView
+                android:id="@+id/tv_item_past_appointments_time"
+                style="@style/BaseCustomizedTextView.AppointmentItemHighLightTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="8:30 AM"
+                android:lines="1"/>
+
+            <TextView
+                android:id="@+id/tv_item_past_appointments_date"
+                style="@style/BaseCustomizedTextView.AppointmentItemSubTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="27 MAY 17"
+                android:lines="1"
+                android:layout_marginTop="8dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_item_past_appointments_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@+id/ll_item_past_appointments_datetime"
+            android:layout_marginStart="32dp"
+            android:layout_toStartOf="@+id/view_item_past_appointments_status"
+            android:layout_marginEnd="8dp">
+
+            <TextView
+                android:id="@+id/tv_item_past_appointments_title"
+                style="@style/BaseCustomizedTextView.AppointmentItemHighLightTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lines="1"
+                android:text="Appointment # 2542" />
+
+            <TextView
+                android:id="@+id/tv_appointment_info_location_doctor"
+                style="@style/BaseCustomizedTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:lines="1"
+                android:text="Home visit - Dr.Finola Jawsin"
+                android:textColor="@color/colorHintText"
+                android:textSize="@dimen/text_size_subtitle"
+
+                android:layout_marginTop="8dp"/>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_appointment_doctor_info"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAppointmentDoctorInfo"
+        android:clickable="true"
+        android:paddingBottom="24dp"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rl_appointment_info">
+
+        <View
+            android:id="@+id/view_divider1"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentTop="true"
+            android:background="@color/colorAppointmentDivider" />
+
+        <ImageView
+            android:id="@+id/iv_appointment_past_avatar"
+            android:layout_width="@dimen/size_imageview_item_find_doctor_avatar"
+            android:layout_height="@dimen/size_imageview_item_find_doctor_avatar"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="32dp"
+            android:padding="8dp"
+            android:src="@mipmap/ic_launcher" />
+
+        <LinearLayout
+            android:id="@+id/ll_appointment_info_des"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="32dp"
+            android:layout_marginTop="24dp"
+            android:layout_toEndOf="@+id/iv_appointment_past_avatar"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:paddingLeft="24dp">
+
+            <TextView
+                android:id="@+id/tv_appointment_info_doctor_name"
+                style="@style/BaseCustomizedTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:lines="1"
+                android:text="Dr. Finola Jeswan"
+                android:textAppearance="?android:textAppearanceListItem" />
+
+            <TextView
+                android:id="@+id/tv_appointment_info_speciality"
+                style="@style/BaseCustomizedTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:lines="1"
+                android:text="Cardiologist Surgeon"
+                android:textColor="@color/colorHintText"
+
+                android:textSize="@dimen/text_size_subtitle" />
+
+        </LinearLayout>
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/bt_appointment_info_submit_review"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:text="SUBMIT YOUR REVIEW"
+        style="@style/CustomizedButton"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <RelativeLayout
+        android:id="@+id/rl_appointment_rating_comment"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:paddingLeft="32dp"
+        android:paddingRight="32dp"
+        android:paddingTop="48dp"
+        app:layout_constraintBottom_toTopOf="@+id/view_divider3"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rl_appointment_doctor_info"
+        app:layout_constraintVertical_bias="0.0">
+        <TextView
+            android:id="@+id/tv_appointment_info_rating_title"
+            style="@style/CustomizedTitleTextView"
+            android:layout_alignStart="@+id/et_sign_up_first_name"
+            android:layout_below="@+id/et_sign_up_first_name"
+            android:text="START RATING" />
+
+        <RatingBar
+            android:id="@+id/ratingbar_appointment_rating"
+            style="@style/Base.Widget.AppCompat.RatingBar.Indicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:rating="3"
+            android:layout_below="@+id/tv_appointment_info_rating_title"
+            android:layout_marginTop="16dp"/>
+
+        <View
+            android:id="@+id/view_divider2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorAppointmentDivider"
+            android:layout_below="@+id/ratingbar_appointment_rating"
+            android:layout_marginTop="24dp"/>
+
+        <TextView
+            android:id="@+id/tv_appointment_info_comment_title"
+            style="@style/CustomizedTitleTextView"
+            android:layout_alignStart="@+id/et_sign_up_first_name"
+            android:layout_below="@+id/view_divider2"
+            android:layout_marginTop="48dp"
+            android:text="LEAVE YOUR REVIEW" />
+
+        <EditText
+            android:id="@+id/et_appointment_info_comment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:gravity="top"
+            android:hint="@string/hint1"
+            android:inputType="textMultiLine"
+            android:minLines="4"
+            android:textColorHint="@color/color_label_create_booking"
+            android:layout_below="@+id/tv_appointment_info_comment_title"
+            android:textSize="15dp"
+            android:layout_marginTop="24dp"
+            />
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/view_divider3"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="@color/colorAppointmentDivider"
+        android:layout_alignParentBottom="true"
+        app:layout_constraintTop_toBottomOf="@+id/rl_appointment_rating_comment"
+        app:layout_constraintBottom_toTopOf="@+id/bt_appointment_info_submit_review"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginBottom="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"/>
+
+</android.support.constraint.ConstraintLayout>

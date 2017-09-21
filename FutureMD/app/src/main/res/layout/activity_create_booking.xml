@@ -28,14 +28,14 @@
 
         <TextView
             android:id="@+id/toolbar_title"
-            android:layout_width="wrap_content"
+            style="@style/CustomizedTitleTextView"
             android:layout_height="?attr/actionBarSize"
             android:layout_centerHorizontal="true"
             android:layout_gravity="center"
             android:gravity="center"
             android:text="Create Appointment"
             android:textColor="@android:color/secondary_text_light"
-            android:textSize="@dimen/text_size_title" />
+            android:textSize="@dimen/text_size_toolbar_title" />
 
         <ImageView
             android:id="@+id/toolbar_logo1"
@@ -71,12 +71,12 @@
 
             <ImageView
                 android:id="@+id/image_doctor_avatar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
                 android:layout_gravity="center_vertical"
                 android:layout_marginRight="16dp"
-                android:src="@android:mipmap/sym_def_app_icon"
-                android:scaleType="centerInside"/>
+                android:scaleType="centerInside"
+                android:src="@android:mipmap/sym_def_app_icon" />
 
             <TextView
                 android:id="@+id/tv_doctor_name"
@@ -86,7 +86,7 @@
                 android:layout_toRightOf="@id/image_doctor_avatar"
                 android:text="Dr. Finola Jawsin"
                 android:textSize="12sp"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/tv_visit_type"
@@ -95,9 +95,9 @@
                 android:layout_alignParentRight="true"
                 android:layout_alignTop="@id/image_doctor_avatar"
                 android:text="Home Visit"
-                android:textStyle="bold"
                 android:textColor="@color/color_label_create_booking"
-                android:textSize="@dimen/font_size_label_create_booking"/>
+                android:textSize="@dimen/font_size_label_create_booking"
+                android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -105,8 +105,8 @@
                 android:layout_alignBottom="@id/image_doctor_avatar"
                 android:layout_toRightOf="@id/image_doctor_avatar"
                 android:text="Cardiologist Surgon"
-                android:textSize="@dimen/font_size_label_create_booking"
-                android:textColor="@color/color_label_create_booking"/>
+                android:textColor="@color/color_label_create_booking"
+                android:textSize="@dimen/font_size_label_create_booking" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -115,7 +115,7 @@
                 android:layout_alignParentRight="true"
                 android:text="200$ / Visit"
                 android:textColor="@color/color_label_create_booking"
-                android:textSize="@dimen/font_size_label_create_booking"/>
+                android:textSize="@dimen/font_size_label_create_booking" />
 
 
         </RelativeLayout>

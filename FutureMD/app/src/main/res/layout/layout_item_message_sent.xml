@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="96dp"
+    android:paddingTop="8dp"
+    android:paddingBottom="8dp">
+
+    <TextView
+        android:id="@+id/tv_item_message_message_sender"
+        style="@style/BaseCustomizedTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="32dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/bg_item_message_sent"
+        android:gravity="center_vertical|left"
+        android:paddingLeft="16dp"
+        android:paddingRight="28dp"
+        android:paddingTop="12dp"
+        android:paddingBottom="12dp"
+        android:textSize="16dp"
+        android:textColor="@android:color/white"
+        android:layout_toStartOf="@+id/iv_item_message_avatar_sender" />
+
+    <ImageView
+        android:id="@+id/iv_item_message_avatar_sender"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        app:srcCompat="@mipmap/ic_launcher"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:padding="8dp"/>
+
+    <TextView
+        android:id="@+id/iv_item_message_time_sender"
+        style="@style/BaseCustomizedTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2:50 PM"
+        android:textSize="10dp"
+        android:layout_below="@+id/iv_item_message_avatar_sender"
+        android:layout_alignStart="@+id/iv_item_message_avatar_sender"
+        android:textColor="@color/colorHintText"
+        android:layout_alignParentEnd="true"
+        android:gravity="center"/>
+</RelativeLayout>

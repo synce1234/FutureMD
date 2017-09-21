@@ -23,11 +23,7 @@
 
             </item>
 
-            <!--<item android:bottom="-20dp" >-->
-                <!--<shape android:shape="line" >-->
-                    <!--<stroke android:width="0.1dp" android:color="#000000"/>-->
-                <!--</shape>-->
-            <!--</item>-->
+
 
 
         </layer-list>

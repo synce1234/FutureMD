@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.dev.app.futuremd.SupportActivity">
+
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/btn_support_send_message"
+        android:id="@android:id/content"
+        android:orientation="vertical"
+        android:paddingTop="32dp"
+        android:paddingLeft="@dimen/padding_left_content"
+        android:paddingRight="@dimen/padding_left_content"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SUBJECT"
+            android:layout_marginBottom="10dp"
+            android:textSize="@dimen/font_size_support_label"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/edit_support_subject"
+            android:layout_marginBottom="10dp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="REASON"
+            android:layout_marginBottom="10dp"
+            android:textSize="@dimen/font_size_support_label"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/edit_support_reason"
+            android:layout_marginBottom="10dp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="LEAVE YOUR MESSAGE"
+            android:layout_marginBottom="10dp"
+            android:textSize="@dimen/font_size_support_label"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:id="@+id/edit_support__leave_message"
+            android:inputType="textMultiLine"
+            android:minLines="4"
+            android:hint="@string/hint_support_message"
+            android:gravity="left"
+            />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@android:id/text1"
+                android:text="PHONE NUMBER"
+                android:layout_marginBottom="5dp"
+                android:textSize="@dimen/font_size_support_label"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="+1 00 000 0000"
+                android:textSize="@dimen/font_size_support_label"
+                android:layout_below="@android:id/text1"
+                android:id="@+id/tv_support_phone_number"
+                android:layout_marginBottom="10dp"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="E-MAIL ADDRESS"
+                android:layout_alignBaseline="@android:id/text1"
+                android:id="@android:id/text2"
+                android:layout_alignLeft="@+id/tv_support_email"
+                android:textSize="@dimen/font_size_support_label"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_support_email"
+                android:text="SOMENG@SOME.COM"
+                android:layout_alignParentRight="true"
+                android:layout_alignBaseline="@+id/tv_support_phone_number"
+                android:textSize="@dimen/font_size_support_label"
+
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_support_phone_number"
+                android:text="ADDRESS"
+                android:id="@android:id/title"
+                android:layout_marginBottom="5dp"
+                android:textSize="@dimen/font_size_support_label"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@android:id/title"
+                android:text="SUITE # 213 ST. 42 NEW YORK . UNITED STATE"
+                android:textSize="@dimen/font_size_support_label"
+                android:id="@+id/tv_support_address"/>
+        </RelativeLayout>
+
+
+
+
+    </LinearLayout>
+
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        style="@style/CustomizedButton"
+        android:text="SEND MESSAGE"
+        android:id="@+id/btn_support_send_message"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@android:id/content"
+        />
+
+    <RelativeLayout
+        android:id="@+id/rl_header"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="0dp"
+        android:background="@android:color/white"
+        android:minHeight="?attr/actionBarSize"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/toolbar_logo"
+            android:layout_width="?attr/actionBarSize"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_gravity="left|center_vertical"
+            android:background="?attr/actionBarItemBackground"
+            android:clickable="true"
+            android:src="@drawable/ic_nav_menu" />
+
+        <TextView
+            android:id="@+id/toolbar_title"
+            style="@style/CustomizedTitleTextView"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="Support"
+            android:textColor="@android:color/secondary_text_light"
+            android:textSize="@dimen/text_size_toolbar_title" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="0dp"
+        android:gravity="center_vertical"
+        app:layout_constraintBottom_toTopOf="@android:id/content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rl_header"
+        android:background="@drawable/bg_seperator_inquiry"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/padding_left_content"
+            android:text="INQUIRY"
+            android:textSize="@dimen/font_size_support_label"
+            />
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>

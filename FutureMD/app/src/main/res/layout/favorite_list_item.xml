@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_fav_list_item"
+    >
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:background="@drawable/bg_seperator_view"
+        android:layout_alignParentTop="true"
+        android:id="@android:id/content"
+        />
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_below="@android:id/content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:layout_alignParentStart="true"
+
+        >
+        <!--<View-->
+            <!--android:layout_width="5dp"-->
+            <!--android:layout_height="wrap_content"-->
+
+            <!--android:background="#50d2c2"-->
+            <!--android:layout_alignParentLeft="true"-->
+            <!--&gt;</View>-->
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/ic_launcher"
+            android:id="@+id/img_fav_avatar"
+            android:layout_marginLeft="14dp"
+            android:layout_alignParentTop="true"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Appointment with Janet"
+            android:layout_toRightOf="@id/img_fav_avatar"
+            android:id="@+id/tv_fav_name"
+            android:layout_marginLeft="16dp"
+            android:layout_marginBottom="16dp"
+            android:layout_marginTop="8dp"
+            />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_favorite_time"
+            android:layout_below="@id/tv_fav_name"
+            android:layout_alignLeft="@id/tv_fav_name"
+            android:id="@android:id/icon1"
+            android:layout_marginRight="5dp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="8 - 10 am"
+            android:layout_toRightOf="@android:id/icon1"
+            android:id="@+id/tv_fav_time"
+            android:layout_alignBaseline="@android:id/icon1"
+            android:layout_below="@id/tv_fav_name"
+            android:layout_marginRight="10dp"
+            />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_favorite_location_pin"
+            android:layout_below="@id/tv_fav_name"
+            android:layout_toRightOf="@id/tv_fav_time"
+            android:id="@android:id/icon2"
+            android:layout_marginRight="5dp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New York"
+            android:layout_toRightOf="@android:id/icon2"
+            android:id="@+id/tv_fav_location"
+            android:layout_alignBaseline="@android:id/icon2"
+            android:layout_below="@id/tv_fav_name"
+            />
+
+        <RatingBar
+            android:id="@+id/rb_item_past_appointments_rating"
+            style="@style/Widget.AppCompat.RatingBar.Small"
+            android:theme="@style/CustomizedRateBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:isIndicator="false"
+            android:numStars="5"
+            android:rating="5"
+            android:stepSize="1"
+            android:layout_marginTop="12dp"
+            android:layout_below="@android:id/icon1"
+            android:layout_alignLeft="@android:id/icon1"
+            />
+    </RelativeLayout>
+
+    <ImageView
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:src="@drawable/ic_my_appointments_schedule"
+        android:layout_alignParentRight="true"
+        android:id="@+id/imageView2"
+        android:layout_marginRight="16dp"
+        android:layout_alignParentTop="true"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Appoint Again"
+        android:layout_below="@+id/imageView2"
+        android:layout_alignLeft="@+id/imageView2"
+        android:textSize="10sp"/>
+
+</RelativeLayout>

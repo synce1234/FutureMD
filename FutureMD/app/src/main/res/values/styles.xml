@@ -37,6 +37,7 @@
     <style name="CustomizedTitleTextView" parent="BaseCustomizedTextView">
         <item name="android:textSize">@dimen/text_size_title</item>
         <item name="android:textColor">@color/colorHintText</item>
+        <item name="android:lines">1</item>
     </style>
 
     <style name="CustomizedFuncItemTextView" parent="BaseCustomizedTextView">
@@ -99,5 +100,20 @@
 
     <style name="SpinnerTheme" parent="android:Widget.EditText">
         <item name="android:background">@drawable/bg_spinner</item>
+    </style>
+
+    <style name="SwitchTheme" parent="FullScreen">
+        <!-- active thumb & track color (30% transparency) -->
+        <!--<item name="android:colorControlActivated">#50d2c2</item>-->
+        <!--<item name="android:colorControlActivated">#148E13</item>-->
+        <!-- inactive thumb color -->
+        <!--<item name="colorSwitchThumbNormal">#f1f1f1</item>-->
+
+        <!-- inactive track color (30% transparency) -->
+        <!--<item name="android:colorForeground">#42221f1f</item>-->
+        <item name="android:colorControlActivated">#148E13</item>
+        <!--<item name="colorPrimary">@color/colorPrimary</item>-->
+        <!--<item name="colorPrimaryDark">@color/colorPrimaryDark</item>-->
+        <item name="colorAccent">#50d2c2</item>
     </style>
 </resources>

@@ -13,4 +13,13 @@
     <color name="colorBarRate">#F1C40F</color>
     <color name="colorAppointmentStateProcessed">#50D2C2</color>
     <color name="colorAppointmentStateCanceled">#D667CD</color>
+
+    <!--Appointment info-->
+    <color name="colorAppointmentDoctorInfo">#F8F8F9</color>
+    <color name="colorAppointmentDivider">#E8E8E9</color>
+    <color name="background_info_panel">#f8f8f9</color>
+
+    <color name="disable_forground_grey">#42221f1f</color>
+    <color name="disable_thumb_grey">#1c000000</color>
+    <color name="enable_thumb_green">#46bdbf</color>
 </resources>

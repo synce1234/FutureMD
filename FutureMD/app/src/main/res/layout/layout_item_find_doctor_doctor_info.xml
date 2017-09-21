@@ -10,7 +10,7 @@
     android:background="?attr/selectableItemBackground"
     >
     <ImageView
-        android:id="@+id/iv_item_doctor_info_avatar"
+        android:id="@+id/iv_appointment_past_avatar"
         android:layout_width="@dimen/size_imageview_item_find_doctor_avatar"
         android:layout_height="@dimen/size_imageview_item_find_doctor_avatar"
         android:src="@mipmap/ic_launcher"
@@ -19,14 +19,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:id="@+id/ll_item_doctor_info_des"
+        android:id="@+id/ll_appointment_info_des"
         android:gravity="center_vertical"
         android:layout_centerVertical="true"
-        android:layout_toEndOf="@+id/iv_item_doctor_info_avatar"
-        android:layout_toStartOf="@+id/ll_item_doctor_info_extra"
+        android:layout_toEndOf="@+id/iv_appointment_past_avatar"
+        android:layout_toStartOf="@+id/ll_appointment_info_extra"
         android:layout_marginStart="15dp">
         <TextView
-            android:id="@+id/tv_item_doctor_info_name"
+            android:id="@+id/tv_appointment_info_name"
             style="@style/BaseCustomizedTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -34,7 +34,7 @@
             android:textAppearance="?android:textAppearanceListItem"
             android:lines="1"/>
         <TextView
-            android:id="@+id/tv_item_doctor_info_speciality"
+            android:id="@+id/tv_appointment_info_speciality"
             style="@style/BaseCustomizedTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -45,7 +45,7 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/ll_item_doctor_info_extra"
+        android:id="@+id/ll_appointment_info_extra"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -54,7 +54,7 @@
         android:layout_alignParentEnd="true"
         android:layout_marginLeft="8dp">
         <TextView
-            android:id="@+id/tv_item_doctor_info_location"
+            android:id="@+id/tv_appointment_info_location"
             style="@style/BaseCustomizedTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -63,7 +63,7 @@
             android:textSize="10dp"
             android:lines="1"/>
         <TextView
-            android:id="@+id/tv_item_doctor_info_price"
+            android:id="@+id/tv_appointment_info_price"
             style="@style/BaseCustomizedTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

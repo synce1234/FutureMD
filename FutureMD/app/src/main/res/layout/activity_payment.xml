@@ -319,6 +319,7 @@
                 android:layout_alignParentBottom="true"
                 style="@style/CustomizedButton"
                 android:text="Proceed Checkout"
+                android:id="@+id/btn_payment_process_checkout"
                 />
         </RelativeLayout>
 

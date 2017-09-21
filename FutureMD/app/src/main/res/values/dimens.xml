@@ -22,13 +22,16 @@
     <dimen name="text_size_find_doctor_filter_data">10dp</dimen>
     <dimen name="padding_left_find_doctor_content">16dp</dimen>
     <dimen name="padding_right_find_doctor_content">16dp</dimen>
-
     <dimen name="size_imageview_item_find_doctor_avatar">48dp</dimen>
 
     <!--My Appointments-->
     <dimen name="text_size_appointment_tab">14dp</dimen>
     <dimen name="text_size_appointment_item_highlight">16dp</dimen>
     <dimen name="text_size_appointment_item_sub">12dp</dimen>
+
+    <!--Appointment Info-->
+    <dimen name="size_imageview_appointment_info_logo">64dp</dimen>
+
 
     <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="activity_horizontal_margin">64dp</dimen>
@@ -39,9 +42,15 @@
     <dimen name="logo_size_dashboard">64dp</dimen>
     <dimen name="list_item_spacing">16dp</dimen>
     <dimen name="list_item_spacing_half">8dp</dimen>
-    
+
     <dimen name="font_size_label_create_booking">11sp</dimen>
     <dimen name="font_size_text_create_booking">13sp</dimen>
     <dimen name="padding_bottom_label_create_booking">5dp</dimen>
     <dimen name="height_panel_doctor_info">80dp</dimen>
+    <dimen name="text_margin">16dp</dimen>
+    <dimen name="padding_left_profile">32dp</dimen>
+    <dimen name="font_size_profile">12sp</dimen>
+    <dimen name="padding_left_content">32dp</dimen>
+    <dimen name="divider_view_length">2dp</dimen>
+    <dimen name="font_size_support_label">12sp</dimen>
 </resources>

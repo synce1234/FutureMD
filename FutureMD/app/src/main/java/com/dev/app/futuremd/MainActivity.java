@@ -117,6 +117,7 @@ public class MainActivity extends AppCompatActivity {
             case R.id.tv_nav_item_favorites:
                 break;
             case R.id.tv_nav_item_messages:
+                openFragment(MessageFragment.TAG);
                 break;
             case R.id.tv_nav_item_invite_friends:
                 break;
@@ -127,16 +128,18 @@ public class MainActivity extends AppCompatActivity {
 
     private void openFragment(String tag){
         BaseFragment baseFragment = (BaseFragment)getSupportFragmentManager().findFragmentByTag(tag);
-        if(baseFragment!= null)
-            return;
-
-        switch (tag){
-            case FindDoctorFragment.TAG:
-                baseFragment = new FindDoctorFragment();
-                break;
-            case MyAppointmentsFragment.TAG:
-                baseFragment = new MyAppointmentsFragment();
-                break;
+        if(baseFragment== null){
+            switch (tag){
+                case FindDoctorFragment.TAG:
+                    baseFragment = new FindDoctorFragment();
+                    break;
+                case MyAppointmentsFragment.TAG:
+                    baseFragment = new MyAppointmentsFragment();
+                    break;
+                case MessageFragment.TAG:
+                    baseFragment = new MessageFragment();
+                    break;
+            }
         }
 
         if(baseFragment != null){
